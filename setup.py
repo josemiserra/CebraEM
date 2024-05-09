@@ -66,17 +66,6 @@ setup(
     cmdclass= get_commands(),
     author='jhennies',
     author_email='hennies@embl.de',
-    scripts=[
-        'bin/init_project.py',
-        'bin/run.py',
-        'bin/init_gt.py',
-        'bin/link_gt.py',
-        'bin/log_gt.py',
-        'bin/init_segmentation.py'
-        'bin/install_torch.py',
-        'bin/convert_to_bdv.py',
-        'bin/normalize_instances.py'
-    ],
     zip_safe=False,
     long_description=open('README.md',encoding="utf8").read(),
     classifiers=classifiers,

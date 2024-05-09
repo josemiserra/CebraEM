@@ -1,5 +1,10 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "cebraem"
+version = '0.0.3'
 authors = [{name = "Julian Hennies", email = "hennies@embl.de"}]
 description = "Toolkit for 3D Volume EM segmentation"
 requires-python = ">=3.9"
@@ -10,55 +15,47 @@ maintainers = [
 ]
 classifiers = [
     "Framework :: napari",
-    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3"
 ]
-
-[project.urls]
-Homepage = "https://github.com/jhennies/CebraEM"
-
-[options]
-packages = find:
 # for compiling and develop setup only
 # no need to specify the versions so that we could
 # compile for multiple targeted versions.
 dependencies = [
-    "snakemake"
-    torch>=1.5
-    numpy>=1.17
-    napari[all]
-    pyqt5
-    h5py
-    python-elf
-    vigra
-    mobie_utils==0.3
-    scikit-image==0.19
-    bioimageio.core
+    "snakemake",
+    "torch>=1.5",
+    "numpy>=1.17",
+    "napari[all]",
+    "pyqt5",
+    "h5py",
+    "python-elf",
+    "vigra",
+    "mobie_utils==0.3",
+    "scikit-image==0.19",
+    "bioimageio.core",
+    "scikit-image>=0.14.2",
+    "pillow",
+    "torchvision",
+    "tqdm>=4.47.0"
 ]
-[options.extras_require]
-all =
-    scikit-image>=0.14.2
-    pillow
-    torchvision
-    tqdm>=4.47.0
-skimage =
-    scikit-image>=0.14.2
-pillow =
-    pillow
-tensorboard =
-    tensorboard
-ignite =
-    pytorch-ignite==0.4.2
-torchvision =
-    torchvision
-tqdm =
-    tqdm>=4.47.0
-psutil =
-    psutil
 
 
-[options.entry_points]
-napari.manifest =
-cebra-ann = cebra_ann:napari.yaml
+[project.urls]
+Homepage = "https://github.com/jhennies/CebraEM"
+
+[project.scripts]
+cem_init_project = 'cebraem.bin.init_project.py'
+cem_run ='cebraem.bin.run.py'
+cem_init_gt = 'cebraem.bin.init_gt.py'
+cem_link_gt ='cebraem.bin.link_gt.py'
+cem_log_gt = 'cebraem.bin.log_gt.py'
+cem_init_segmentation = 'cebraem.bin.init_segmentation.py'
+cem_install_torch = 'cebraem.bin.install_torch.py'
+cem_convert_to_bdv = 'cebraem.bin.convert_to_bdv.py'
+cem_normalize_instances = 'cebraem.bin.normalize_instances.py'
+cem_update_mobie_table = 'cebraem.bin.update_mobie_table'
+
+[project.entry-points."napari.manifest"]
+cebra-ann = 'cebraem.cebra_ann:napari.yaml'
 
 [bdist_wheel]
 universal = 1
