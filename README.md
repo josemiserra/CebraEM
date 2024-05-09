@@ -2,21 +2,19 @@
 
 ## Installation
 
-For Windows use an anaconda prompt, for Linux use a terminal.
+### Installing Miniconda
 
-Clone the CebraEM repo into a path of your choice (now referred to as ```/path/to/cebra_em/```):
+1. Download Miniconda: https://docs.anaconda.com/free/miniconda/miniconda-install/
+Choose the installer based on your operating system (Windows, macOS, or Linux) and download it. Once the download is complete, run the installer. F
+During the installation process, you might be asked whether you want to add Miniconda to your PATH. It's recommended to select this option as it allows you to run Conda and Python commands from any directory in your terminal or command prompt. Open a new terminal or command prompt window and type conda --version. If Miniconda was installed successfully, you should see the version number of Conda printed in the terminal.
 
-```
-cd /path/of/cebra_em/
-git clone https://github.com/jhennies/CebraEM.git
-```
-
-I generally recommend using the mamba package for installing the conda environments. Install mamba into the base 
-environment with:
-
+2. Installing Mamba
+Open a Terminal or Command Prompt:
 ```
 conda install -c conda-forge mamba
 ```
+This command tells Conda to install Mamba from the conda-forge channel.
+With Miniconda or Mamba installed, you can now create Python environments, install packages, and manage your Python projects with ease. 
 
 For the following descriptions an installation of Mamba is assumed (otherwise just replace "mamba" -> "conda")
 
@@ -24,12 +22,8 @@ For the following descriptions an installation of Mamba is assumed (otherwise ju
 
 The following commands install CebraEM as well as all dependencies except pytorch
 ```
-mamba create -y -n cebra-em-env -c conda-forge python=3.9 python-elf pybdv mobie_utils=0.3 vigra bioimageio.core=0.5.11 bioimageio.spec=0.4.9.post5 marshmallow
+mamba create -y -n cebra-em-env -c conda-forge python=3.9 vigra
 conda activate cebra-em-env
-
-pip install -e ./cebra-em-core/
-pip install -e ./cebra-ann/
-pip install -e ./cebra-em/
 ```
 
 For pytorch you will need to determine your Cuda version and select the correct installation call. 

@@ -27,15 +27,17 @@ dependencies = [
     "napari[all]",
     "pyqt5",
     "h5py",
-    "python-elf",
-    "vigra",
-    "mobie_utils==0.3",
+    "elf@git+https://github.com/constantinpape/elf",
+    "mobie@git+https://github.com/mobie/mobie-utils-python@0.3.0", 
     "scikit-image==0.19",
-    "bioimageio.core",
-    "scikit-image>=0.14.2",
     "pillow",
     "torchvision",
-    "tqdm>=4.47.0"
+    "tqdm>=4.47.0",
+    "pybdv@git+https://github.com/constantinpape/pybdv",
+    "datrie",
+    "bioimageio.core==0.5.11",
+    "bioimageio.spec==0.4.9.post5",
+    "marshmallow"
 ]
 
 
@@ -50,7 +52,6 @@ cem_link_gt ='cebraem.bin.link_gt.py'
 cem_log_gt = 'cebraem.bin.log_gt.py'
 cem_init_segmentation = 'cebraem.bin.init_segmentation.py'
 cem_install_torch = 'cebraem.bin.install_torch.py'
-cem_convert_to_bdv = 'cebraem.bin.convert_to_bdv.py'
 cem_normalize_instances = 'cebraem.bin.normalize_instances.py'
 cem_update_mobie_table = 'cebraem.bin.update_mobie_table'
 

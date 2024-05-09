@@ -10,7 +10,6 @@ from setuptools import find_packages, setup, Distribution, Command
 from distutils.util import convert_path
 from setuptools.command.install import install
 
-import versioneer
 
 classifiers = [
         "Programming Language :: Python :: 3",
