@@ -1,0 +1,14 @@
+
+graft cebraem
+
+include versioneer.py
+include cebraem/_version.py
+
+include README.md
+include CebraNET_README.md
+include LICENSE
+include cebra_em_logo_small.jpg
+include cebra_em_logo.jpg
+
+global-exclude *.py[cod] __pycache__ *.so
+global-exclude .gitignore
